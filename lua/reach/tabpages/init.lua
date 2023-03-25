@@ -1,6 +1,5 @@
 local icons = require('reach.icons')
 local util = require('reach.util')
-local plenary = require('plenary')
 
 local notify = require('reach.helpers').notify
 
@@ -40,12 +39,7 @@ function module.component(state)
 
   -- insert(parts, { #tabpage:title(), 'Comment' })
   insert(parts, {
-    f(
-      '%s (%s window%s) ',
-      plenary.path:new(tabpage:title()):shorten(1),
-      #tabpage.wins,
-      #tabpage.wins > 1 and 's' or ''
-    ),
+    f('%s (%s window%s) ', tabpage:title(), #tabpage.wins, #tabpage.wins > 1 and 's' or ''),
     'Comment',
   })
 
