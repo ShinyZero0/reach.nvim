@@ -37,10 +37,9 @@ function module.component(state)
     table.insert(parts, { ' ', 'Normal' })
   end
 
-  -- insert(parts, { #tabpage:title(), 'Comment' })
   insert(parts, {
     f('%s (%s window%s) ', tabpage:title(), #tabpage.wins, #tabpage.wins > 1 and 's' or ''),
-    'Comment',
+    'Normal',
   })
 
   return parts

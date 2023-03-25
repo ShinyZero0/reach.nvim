@@ -16,7 +16,7 @@ function Tabpage:title()
   local win = A.nvim_tabpage_get_win(self.tabnr)
   local buf = A.nvim_win_get_buf(win)
   local name = A.nvim_buf_get_name(buf)
-  return plenary.path:new(name):shorten(1)
+  return plenary.path:new(vim.fn.fnamemodify(name, ':~')):shorten(3)
 end
 function Tabpage:number()
   return vim.api.nvim_tabpage_get_number(self.tabnr)
